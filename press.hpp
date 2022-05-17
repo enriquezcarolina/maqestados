@@ -1,4 +1,5 @@
 
+#include <stdint.h>
 #include <boton.hpp>
 
 class press{
@@ -44,11 +45,11 @@ _state=release;
 
 }
 
-}
+};
 
 void init()
 {
-    press::release(); // por default esta suelto
+    boton::release(); // por default esta suelto
 }
 
 
@@ -59,10 +60,10 @@ bool button; // envia 0 si esta sin presionar 1 si se presiona
 
 enum class _state{
 
-void suelta(){ press::release();    }
-void vent_desc(){ press::press();}
-void vent_asc(){ press::release();}
-void hold(){ press::hold();}
+void suelta(){ boton::release();    }
+void vent_desc(){ boton::press();}
+void vent_asc(){ boton::release();}
+void hold(){ boton::hold();}
 };
 
 uint32_t count;
@@ -70,5 +71,5 @@ static constexpr uint32_t t_on= 50; // 50 ms
 
 
 
-};
+}
 

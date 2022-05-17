@@ -14,6 +14,12 @@ public:
 msj(string senial): _senial(senial){}
 
 ~msj();
+enum class _state{
+ok,hola,error
+//void ok(){rta::ok();}
+//void hola(){ rta::hola();}
+//void error(){rta::error();}
+};
 void FSM(){
 
 switch (_state)
@@ -22,10 +28,10 @@ switch (_state)
 case noanswer:
 if(_senial== 'hola')
 {
-    hola();
+    hrta::ola();
     _state=hola;
 }
-
+break;
 case hola:
 if(_senial=='identifica')
 {
@@ -35,11 +41,11 @@ if(_senial=='identifica')
         ok();
     } else
     {
-        _state=error()
+        _state=error;
         error();
     }
 }
-
+break;
 case ok:
 
 if(_senial=='pass')
@@ -70,13 +76,8 @@ private:
 
 string _senial;
 
-enum class _state{
-
-void ok(){rta::ok();}
-void hola(){ rta::hola();}
-void error(){rta::error();}
-};
 
 
 
-};
+
+}
